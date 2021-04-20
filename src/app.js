@@ -3,7 +3,6 @@ const express = require("express")
 const app = express()
 const rtMain = require('./routers/rtMain')
 const port = process.env.PORT || 3000
-const DB = require('./models/index')
 
 //middlewares
 app.use(express.json())
@@ -12,7 +11,8 @@ app.use(express.json())
 app.use("/",rtMain)
 
 //base de datos
-DB.authenticate()
+const DB = require('./models')
+DB.connection.authenticate()
   .then(()=>console.log("BD mySQL arrancado"))
   .catch(err=>console.log(err))
 
