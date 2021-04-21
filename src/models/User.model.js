@@ -4,13 +4,9 @@ module.exports = (connection, Sequelize) => {
     lastname: {type:Sequelize.STRING},
     email: {type:Sequelize.STRING},
     password: {type:Sequelize.STRING},
-    state:{
+    states:{
       type: Sequelize.ENUM,
       values: ['activo','pendiente','eliminado']
-    },
-    latitud:{
-      type:Sequelize.INTEGER,
-      validate:{min:10,max:20}
     }
   },{
     indexes:[
