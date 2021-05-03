@@ -21,6 +21,6 @@ db.user.hasMany(db.article,{
 })
 
 //Sincronización con MySQL
-db.connection.sync()
+//db.connection.sync()
 
 module.exports = db
